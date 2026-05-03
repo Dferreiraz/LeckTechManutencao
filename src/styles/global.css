@@ -1,10 +1,12 @@
 /* ===== RESET & BASE ===== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
- 
+
 :root {
   /* Colors */
   --primary: #1a3c8f;
@@ -23,21 +25,21 @@
   --bg-soft: #f8fafc;
   --bg-card: #ffffff;
   --white: #ffffff;
- 
+
   /* Typography */
   --font-heading: 'Sora', sans-serif;
   --font-body: 'DM Sans', sans-serif;
- 
+
   /* Spacing */
   --section-py: 80px;
   --container-max: 1200px;
- 
+
   /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-  --shadow-md: 0 4px 16px rgba(0,0,0,0.10);
-  --shadow-lg: 0 8px 32px rgba(0,0,0,0.12);
-  --shadow-card: 0 2px 12px rgba(26,60,143,0.08);
- 
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.10);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --shadow-card: 0 2px 12px rgba(26, 60, 143, 0.08);
+
   /* Radius */
   --radius-sm: 6px;
   --radius-md: 12px;
@@ -45,12 +47,12 @@
   --radius-xl: 32px;
   --radius-full: 9999px;
 }
- 
+
 html {
   scroll-behavior: smooth;
   font-size: 16px;
 }
- 
+
 body {
   font-family: var(--font-body);
   color: var(--text);
@@ -59,32 +61,157 @@ body {
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
- 
+
 img {
   max-width: 100%;
   display: block;
 }
- 
+
 a {
   text-decoration: none;
   color: inherit;
 }
- 
+
 ul {
   list-style: none;
 }
 
 /* ===== TYPOGRAPHY ===== */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   line-height: 1.2;
   color: var(--text);
 }
- 
-h1 { font-size: clamp(2rem, 4vw, 2.75rem); }
-h2 { font-size: clamp(1.5rem, 3vw, 2rem); }
-h3 { font-size: clamp(1.1rem, 2vw, 1.3rem); }
-h4 { font-size: 1rem; }
- 
-p { line-height: 1.7; color: var(--text-muted); }
+
+h1 {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+}
+
+h3 {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+p {
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* ===== UTILITIES ===== */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: var(--section-py) 0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-title h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 8px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-title h2::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--primary);
+  margin: 10px auto 0;
+  border-radius: var(--radius-full);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #e8f0fe;
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(26, 60, 143, 0.15);
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: var(--radius-sm);
+  font-size: 0.93rem;
+  font-weight: 600;
+  transition: all 0.22s ease;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(26, 60, 143, 0.3);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(26, 60, 143, 0.38);
+}
+
+.btn-whatsapp {
+  background: var(--accent);
+  color: var(--white);
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.3);
+}
+
+.btn-whatsapp:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: var(--white);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  :root {
+    --section-py: 56px;
+  }
+}
