@@ -779,3 +779,132 @@
   transform: translateY(-2px);
 }
  
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+ 
+  .footer-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+ 
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+  }
+ 
+  .nav-links.open {
+    display: flex;
+  }
+ 
+  .nav-links a {
+    padding: 12px 24px;
+    width: 100%;
+    font-size: 0.95rem;
+  }
+ 
+  .nav-links a.active::after {
+    display: none;
+  }
+ 
+  .nav-cta {
+    margin: 8px 24px;
+    display: inline-flex;
+    width: calc(100% - 48px);
+    justify-content: center;
+  }
+ 
+  .nav-hamburger {
+    display: flex;
+  }
+ 
+  .header {
+    position: relative;
+  }
+ 
+  .hero {
+    padding-top: 0;
+    min-height: auto;
+  }
+ 
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 48px 24px;
+  }
+ 
+  .hero-image { order: -1; }
+ 
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+ 
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+ 
+  .flow-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+ 
+  .flow-grid::before { display: none; }
+ 
+  .contact-cards {
+    grid-template-columns: 1fr;
+  }
+ 
+  .cta-contacts {
+    flex-direction: column;
+    align-items: center;
+  }
+ 
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+ 
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+ 
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
+ 
+@media (max-width: 480px) {
+  .hero-actions {
+    flex-direction: column;
+  }
+ 
+  .hero-actions .btn {
+    justify-content: center;
+  }
+ 
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+ 
+  .flow-grid {
+    grid-template-columns: 1fr;
+  }
+}
